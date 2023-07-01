@@ -19,7 +19,9 @@ def forAllLayersOfSelectedGlyphs(
     font.enableUpdateInterface()
 
 
-def forSelectedLayers(call_function: Callable, font: GSFont | None = None, **kwargs) -> None:
+def forSelectedLayers(
+    call_function: Callable, font: GSFont | None = None, **kwargs
+) -> None:
     if fonts is None:
         fonts = Glyphs.fonts
 
