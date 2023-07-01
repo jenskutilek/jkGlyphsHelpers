@@ -6,6 +6,16 @@ if TYPE_CHECKING:
     from GlyphsApp import GSFont
 
 
+def forCurrentFont(call_function: Callable, **kwargs) -> None:
+    """
+    Call a function for the currently active Glyphs file.
+    """
+    if Glyphs.font is None:
+        return
+
+    forFonts(call_function, [Glyphs.font], **kwargs)
+
+
 def forFonts(
     call_function: Callable, fonts: List[GSFont] | None = None, **kwargs
 ) -> None:
