@@ -24,7 +24,7 @@ def forFonts(
 
 
 def forAllLayersOfAllGlyphs(
-    call_function: Callable, font: GSFont | None, **kwargs
+    call_function: Callable, font: GSFont | None = None, **kwargs
 ) -> None:
     """
     Call a function for each layer of each glyph in the supplied font, passing the layer

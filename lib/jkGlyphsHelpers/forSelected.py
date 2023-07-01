@@ -6,7 +6,7 @@ if TYPE_CHECKING:
 
 
 def forAllLayersOfSelectedGlyphs(
-    call_function: Callable, font: GSFont | None, **kwargs
+    call_function: Callable, font: GSFont | None = None, **kwargs
 ) -> None:
     if fonts is None:
         fonts = Glyphs.fonts
@@ -19,7 +19,7 @@ def forAllLayersOfSelectedGlyphs(
     font.enableUpdateInterface()
 
 
-def forSelectedLayers(call_function: Callable, font: GSFont | None, **kwargs) -> None:
+def forSelectedLayers(call_function: Callable, font: GSFont | None = None, **kwargs) -> None:
     if fonts is None:
         fonts = Glyphs.fonts
 
