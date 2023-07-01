@@ -8,7 +8,8 @@ if TYPE_CHECKING:
 
 def forCurrentFont(call_function: Callable, **kwargs) -> None:
     """
-    Call a function for the currently active Glyphs file.
+    Call a function for the currently active Glyphs file. Any keyword arguments are
+    passed on to the function.
     """
     if Glyphs.font is None:
         return

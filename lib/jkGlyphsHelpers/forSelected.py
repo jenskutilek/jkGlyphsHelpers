@@ -8,6 +8,11 @@ if TYPE_CHECKING:
 def forAllLayersOfSelectedGlyphs(
     call_function: Callable, font: GSFont | None = None, **kwargs
 ) -> None:
+    """
+    Call a function for each layer of each selected glyph in the supplied font, passing
+    the layer and any keyword arguments. If font is None, the function will be called
+    for the currently active Glyphs file.
+    """
     if fonts is None:
         fonts = Glyphs.fonts
 
@@ -22,6 +27,11 @@ def forAllLayersOfSelectedGlyphs(
 def forSelectedLayers(
     call_function: Callable, font: GSFont | None = None, **kwargs
 ) -> None:
+    """
+    Call a function for each selected layer of the supplied font, passing the layer and
+    any keyword arguments. If font is None, the function will be called for the
+    currently active Glyphs file.
+    """
     if fonts is None:
         fonts = Glyphs.fonts
 
