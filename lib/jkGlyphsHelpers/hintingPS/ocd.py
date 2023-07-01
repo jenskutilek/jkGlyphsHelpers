@@ -35,15 +35,17 @@ def fix_hint_directions(layer: GSLayer) -> None:
 
                 if width < 0:
                     hint.targetNode, hint.originNode = hint.originNode, hint.targetNode
-                    print(f"Switched hint nodes in {layer.parent.name}")
+                    # print(f"Switched hint nodes in {layer.parent.name}")
 
             else:
                 print(
                     f"targetNode is not GSNode in {layer.parent.name}: "
                     f"{hint.targetNode}, ({type(hint.targetNode)})"
+                    ", please check manually."
                 )
         else:
             print(
                 f"originNode is not GSNode in {layer.parent.name}: "
                 f"{hint.originNode}, ({type(hint.originNode)})"
+                ", please check manually."
             )
