@@ -1,2 +1,5 @@
 # jkGlyphsHelpers
-Helper modules for my Glyphs scripts.
+
+Helper modules for Jens Kutilek’s Glyphs Scripts.
+
+See [INSTALL.md](INSTALL.md) for installation instructions.
