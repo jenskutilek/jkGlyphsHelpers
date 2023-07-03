@@ -13,8 +13,8 @@ def forAllLayersOfSelectedGlyphs(
     the layer and any keyword arguments. If font is None, the function will be called
     for the currently active Glyphs file.
     """
-    if fonts is None:
-        fonts = Glyphs.fonts
+    if font is None:
+        font = Glyphs.font
 
     font.disableUpdateInterface()
     for selected_layer in font.selectedLayers:
@@ -32,8 +32,8 @@ def forSelectedLayers(
     any keyword arguments. If font is None, the function will be called for the
     currently active Glyphs file.
     """
-    if fonts is None:
-        fonts = Glyphs.fonts
+    if font is None:
+        font = Glyphs.font
 
     font.disableUpdateInterface()
     for selected_layer in font.selectedLayers:
