@@ -1,6 +1,8 @@
 from __future__ import annotations
 from typing import TYPE_CHECKING, Callable
 
+from GlyphsApp import Glyphs
+
 if TYPE_CHECKING:
     from GlyphsApp import GSFont
 
