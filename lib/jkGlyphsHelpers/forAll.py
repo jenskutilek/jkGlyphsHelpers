@@ -34,6 +34,21 @@ def forFonts(
         font.enableUpdateInterface()
 
 
+def forAllGlyphs(call_function: Callable, font: GSFont | None = None, **kwargs) -> None:
+    """
+    Call a function for each glyph in the supplied font, passing the glyph and any
+    keyword arguments. If `font` is None, the function will be called for the currently
+    active Glyphs file.
+    """
+    if font is None:
+        font = Glyphs.font
+
+    font.disableUpdateInterface()
+    for glyph in font.glyphs:
+        call_function(glyph, **kwargs)
+    font.enableUpdateInterface()
+
+
 def forAllLayersOfAllGlyphs(
     call_function: Callable, font: GSFont | None = None, **kwargs
 ) -> None:
