@@ -17,6 +17,8 @@ def forAllLayersOfSelectedGlyphs(
     """
     if font is None:
         font = Glyphs.font
+        if font is None:
+            return
 
     font.disableUpdateInterface()
     for selected_layer in font.selectedLayers:
@@ -36,6 +38,8 @@ def forSelectedLayers(
     """
     if font is None:
         font = Glyphs.font
+        if font is None:
+            return
 
     font.disableUpdateInterface()
     for selected_layer in font.selectedLayers:

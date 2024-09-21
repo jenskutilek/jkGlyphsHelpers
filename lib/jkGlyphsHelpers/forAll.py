@@ -27,6 +27,8 @@ def forFonts(
     """
     if fonts is None:
         fonts = Glyphs.fonts
+        if not fonts:
+            return
 
     for font in fonts:
         font.disableUpdateInterface()
@@ -42,6 +44,8 @@ def forAllGlyphs(call_function: Callable, font: GSFont | None = None, **kwargs) 
     """
     if font is None:
         font = Glyphs.font
+        if font is None:
+            return
 
     font.disableUpdateInterface()
     for glyph in font.glyphs:
@@ -59,6 +63,8 @@ def forAllLayersOfAllGlyphs(
     """
     if font is None:
         font = Glyphs.font
+        if font is None:
+            return
 
     font.disableUpdateInterface()
     for glyph in font.glyphs:
