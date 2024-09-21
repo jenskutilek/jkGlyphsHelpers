@@ -1,6 +1,6 @@
 from __future__ import annotations
 from GlyphsApp import Glyphs
-from typing import TYPE_CHECKING, Callable, List
+from typing import TYPE_CHECKING, Callable
 
 if TYPE_CHECKING:
     from GlyphsApp import GSFont
@@ -18,7 +18,7 @@ def forCurrentFont(call_function: Callable, **kwargs) -> None:
 
 
 def forFonts(
-    call_function: Callable, fonts: List[GSFont] | None = None, **kwargs
+    call_function: Callable, fonts: list[GSFont] | None = None, **kwargs
 ) -> None:
     """
     Call a function for each font of the fonts list, passing the font and any keyword

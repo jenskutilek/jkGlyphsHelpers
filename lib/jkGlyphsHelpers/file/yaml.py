@@ -3,13 +3,13 @@ from __future__ import annotations
 import yaml
 
 from GlyphsApp import GetOpenFile, GetSaveFile
-from typing import Any, Dict, List
+from typing import Any
 
 
 def load_from_yaml(
     message="Load Data From yaml",
     filetypes=["yaml"],
-) -> Dict[str, Any] | List[Any] | None:
+) -> dict[str, Any] | list[Any] | None:
     file_path = GetOpenFile(message=message, filetypes=filetypes)
     if file_path is None:
         return
@@ -20,7 +20,7 @@ def load_from_yaml(
 
 
 def save_as_yaml(
-    data: Dict[str, Any] | List[Any],
+    data: dict[str, Any] | list[Any],
     message="Save File As yaml",
     ProposedFileName="My File",
     filetypes=["yaml"],
