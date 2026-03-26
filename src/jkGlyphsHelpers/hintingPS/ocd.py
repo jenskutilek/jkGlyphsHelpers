@@ -1,6 +1,8 @@
 from __future__ import annotations
-from GlyphsApp import GSNode, BOTTOMGHOST, TOPGHOST
+
 from typing import TYPE_CHECKING
+
+from GlyphsApp import BOTTOMGHOST, TOPGHOST, GSNode
 
 if TYPE_CHECKING:
     from GlyphsApp import GSLayer

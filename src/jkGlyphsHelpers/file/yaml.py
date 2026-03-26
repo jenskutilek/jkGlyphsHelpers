@@ -1,29 +1,29 @@
 from __future__ import annotations
 
-import plistlib
-
-from GlyphsApp import GetOpenFile, GetSaveFile
 from typing import Any
 
+import yaml
+from GlyphsApp import GetOpenFile, GetSaveFile
 
-def load_from_plist(
-    message="Load Data From plist",
-    filetypes=["plist"],
+
+def load_from_yaml(
+    message="Load Data From yaml",
+    filetypes=["yaml"],
 ) -> dict[str, Any] | list[Any] | None:
     file_path = GetOpenFile(message=message, filetypes=filetypes)
     if file_path is None:
         return
 
     with open(file_path, "rb") as f:
-        data = plistlib.load(f)
+        data = yaml.safe_load(f)
     return data
 
 
-def save_as_plist(
+def save_as_yaml(
     data: dict[str, Any] | list[Any],
-    message="Save File As plist",
+    message="Save File As yaml",
     ProposedFileName="My File",
-    filetypes=["plist"],
+    filetypes=["yaml"],
 ) -> None:
     file_path = GetSaveFile(
         message=message, ProposedFileName=ProposedFileName, filetypes=filetypes
@@ -32,4 +32,4 @@ def save_as_plist(
         return
 
     with open(file_path, "wb") as f:
-        plistlib.dump(data, f)
+        yaml.dump(data, f, encoding="utf-8", allow_unicode=True)
