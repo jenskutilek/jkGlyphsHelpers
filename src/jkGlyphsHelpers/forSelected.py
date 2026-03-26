@@ -46,3 +46,22 @@ def forSelectedLayers(
     for selected_layer in font.selectedLayers:
         call_function(selected_layer, **kwargs)
     font.enableUpdateInterface()
+
+
+def forSelectedGlyphs(
+    call_function: Callable, font: GSFont | None = None, **kwargs
+) -> None:
+    """
+    Call a function for the glyph of each selected layer of the supplied font, passing
+    the glyph and any keyword arguments. If font is None, the function will be called
+    for the currently active Glyphs file.
+    """
+    if font is None:
+        font = Glyphs.font
+        if font is None:
+            return
+
+    font.disableUpdateInterface()
+    for selected_layer in font.selectedLayers:
+        call_function(selected_layer.parent, **kwargs)
+    font.enableUpdateInterface()
